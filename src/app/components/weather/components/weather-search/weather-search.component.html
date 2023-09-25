@@ -1,0 +1,7 @@
+<div class="weather-search">
+  <div class="weather-search__label">Add city</div>
+  <input type="text" placeholder="City name" class="weather-search__input" [(ngModel)]="input">
+  <button class="weather-search__button" [disabled]="!input.length" (click)="addHandler()">
+    Add
+  </button>
+</div>

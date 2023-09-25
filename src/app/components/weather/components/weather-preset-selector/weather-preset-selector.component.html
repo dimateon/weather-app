@@ -1,0 +1,9 @@
+<div class="preset-selector">
+  <div class="preset-selector__radio" *ngFor="let item of presets">
+    <input type="radio" name="preset-selector" [id]="item" [value]="item" [(ngModel)]="_selectedPreset"
+           (change)="changeHandler()">
+    <label [for]="item">
+      {{ item }}
+    </label>
+  </div>
+</div>

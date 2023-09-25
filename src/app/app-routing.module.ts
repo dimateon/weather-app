@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {WeatherTablePresets} from "./interfaces/weather";
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/weather',
+    pathMatch: 'full'
+  },
+  {
+    path: 'weather',
+    loadComponent: () => import('./components/weather/weather.component').then(mod => mod.WeatherComponent)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
