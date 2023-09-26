@@ -1,18 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'temperatureConverter'
+  name: 'kalvinToCelsius',
+  standalone: true,
 })
-export class TemperatureConverterPipe implements PipeTransform {
+export class KalvinToCelsiusPipe implements PipeTransform {
 
-  transform(value: number, unit: string) {
+  transform(value: number) {
 
     if(!value && isNaN(value)) {
       return null;
     }
 
-    const temp = (value - 32) / 1.8 ;
-    return temp.toFixed(2);
+    const temp = value - 273;
+    return temp.toFixed(0);
   }
 
 }

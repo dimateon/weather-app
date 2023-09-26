@@ -17,3 +17,5 @@ export enum WeatherTableSizes {
     HOURLY = 8,
     DAILY = 7,
 }
+
+export const WeatherInitialCities = ['New York', 'London', 'Limassol'];

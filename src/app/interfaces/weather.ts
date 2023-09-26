@@ -12,18 +12,17 @@ export interface WeatherCity {
 export interface WeatherCityDTO {
     country: string;
     lat: number;
-    local_names: any;
     lon: number;
     name: string;
     state: string;
 }
 
 export interface WeatherDailyDTO extends WeatherItemDTO {
-    daily: WeatherMomentDTO[];
+    daily: WeatherDayDTO[];
 }
 
 export interface WeatherHourlyDTO extends WeatherItemDTO {
-    hourly: WeatherMomentDTO[];
+    hourly: WeatherHourDTO[];
 }
 
 export interface WeatherItemDTO {
@@ -31,9 +30,14 @@ export interface WeatherItemDTO {
     lon: number;
 }
 
-export interface WeatherMomentDTO {
+export interface WeatherHourDTO {
     dt: number;
-    temp: TempDayItem | number;
+    temp: number;
+}
+
+export interface WeatherDayDTO {
+  dt: number;
+  temp: TempDayItem;
 }
 
 export interface TempDayItem {

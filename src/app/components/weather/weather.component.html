@@ -2,4 +2,4 @@
 
 <weather-preset-selector [presets]="presets" (selected)="onPresetSelected($event)" [selectedPreset]="selectedPreset"></weather-preset-selector>
 
-<weather-table></weather-table>
+<weather-table [tableHeaders]="tableHeaders" [tableData]="tableData"></weather-table>

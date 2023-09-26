@@ -4,26 +4,27 @@
           <td class="weather-table__cell">
             <div class="weather-table__cell-text">City Name</div>
           </td>
-         
-          <td *ngFor="let item of mockHeaders" class="weather-table__cell">
+
+          <td *ngFor="let item of tableHeaders" class="weather-table__cell">
             <div class="weather-table__cell-text">
                {{ item }}
             </div>
           </td>
-          
+
        </tr>
 
-       <tr class="weather-table-row">
+       <tr class="weather-table-row" *ngFor="let row of tableData">
          <td class="weather-table__cell">
-           <div class="weather-table__cell-text">Moscow</div>
-         </td>
-        
-         <td class="weather-table__cell">
-           <div class="weather-table__cell-text">15</div>
+           <div class="weather-table__cell-text">
+             {{ row.city }}
+           </div>
          </td>
 
-         
+         <td class="weather-table__cell" *ngFor="let item of row.temperatures">
+           <div class="weather-table__cell-text">
+             {{ item | kalvinToCelsius }}
+           </div>
+         </td>
       </tr>
-       
     </tbody>
  </table>
