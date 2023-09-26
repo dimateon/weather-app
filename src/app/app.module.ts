@@ -14,6 +14,7 @@ import {WeatherSearchComponent} from "./components/weather/components/weather-se
 import {WeatherPresetSelectorComponent} from "./components/weather/components/weather-preset-selector/weather-preset-selector.component";
 import {TemperatureConverterPipe} from "./pipes/temperature-converter.pipe";
 import {WeatherComponent} from "./components/weather/weather.component";
+import { QueryParametersService } from './services/query-parameters.service';
 
 @NgModule({
   declarations: [

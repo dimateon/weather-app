@@ -1,12 +1,14 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from "@angular/core";
 import {WeatherService} from "./services/weather.service";
 import {ErrorService} from "../../services/error.service";
-import {WeatherTablePresets} from "../../interfaces/weather";
-import {EMPTY, map, Subject, switchMap, take, takeUntil} from "rxjs";
+import { WeatherTablePresets } from "src/app/constants/weather";
+import {EMPTY, filter, map, Subject, switchMap, take, takeUntil, tap} from "rxjs";
 import {WeatherSearchComponent} from "./components/weather-search/weather-search.component";
 import {WeatherTableComponent} from "./components/weather-table/weather-table.component";
 import {WeatherPresetSelectorComponent} from "./components/weather-preset-selector/weather-preset-selector.component";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
+import { QueryParametersService } from "src/app/services/query-parameters.service";
+import { WeatherTableData } from "src/app/interfaces/weather";
 
 @Component({
   selector: 'app-weather',
@@ -21,56 +23,61 @@ export class WeatherComponent implements OnInit, OnDestroy {
   constructor(
     private weatherService: WeatherService,
     private errorService: ErrorService,
-    private _route: ActivatedRoute,
-    private _router: Router,
+    private queryService: QueryParametersService,
   ) {}
 
   public presets: string[] = Object.values(WeatherTablePresets);
-  private selectedPreset: WeatherTablePresets = WeatherTablePresets.HOURLY;
+  public selectedPreset: WeatherTablePresets = WeatherTablePresets.HOURLY;
+  public tableData: WeatherTableData[] = [];
   private _onDestroy$ = new Subject();
 
   ngOnInit(): void {
-    this.loadHourlyWeather('Moscow');
-    this.loadDailyWeather('Moscow');
+    this.checkQueryParams();
+  }
 
-    this._route.queryParams.pipe(
+  private checkQueryParams(): void {
+    const preset = this.queryService.getQueryParamByName<WeatherTablePresets>('preset');
+    if (preset) {
+      this.selectedPreset = preset;
+    } else {
+      this.queryService.setQueryParam('preset', this.selectedPreset);
+    }
+  }
+
+  public onAddCity(cityName: string): void {
+    // this.loadHourlyWeather(cityName);
+    // this.loadDailyWeather(cityName);
+    // this.loadCity(cityName);
+    this.weatherService.getCity(cityName).pipe(
       take(1),
-      map((params) => {
-        if (!params['preset']) {
-          this._router.navigate([], {
-            relativeTo: this._route,
-            queryParams: {
-              preset: this.selectedPreset
-            }
-          })
+      tap((city) => {
+        if (!city) {
+          this.errorService.showError(`Could not find city with name "${cityName}"`);
+          return EMPTY;
         }
-        if (params['cities']) {
-          console.log(params['cities']);
-          // TODO load data for cities
-        }
+        this.queryService.addQueryParam('cities', cityName);
+        return city;
+      }),
+      switchMap((cityName) => this.weatherService.getHourly(cityName.lat, cityName.lon)),
+      map((data) => {
+        console.log(data)
+      })
+      
+    ).subscribe()
+  }
+
+  public onPresetSelected(preset: WeatherTablePresets): void {
+    this.selectedPreset = preset;
+    this.queryService.setQueryParam('preset', this.selectedPreset);
+  }
+
+  private loadCity(cityName: string): void {
+    this.weatherService.getCity(cityName).pipe(
+      takeUntil(this._onDestroy$),
+      map((city) => {
+        console.log(city);
       })
     ).subscribe();
-  }
-
-  public async onAddCity(cityName: string) {
-    this.loadHourlyWeather(cityName);
-
-    await this._router.navigate([], {
-      relativeTo: this._route,
-      queryParams: {
-        cities: cityName
-      }
-    });
-  }
-
-  public async onPresetSelected(preset: WeatherTablePresets) {
-    this.selectedPreset = preset;
-    await this._router.navigate([], {
-      relativeTo: this._route,
-      queryParams: {
-        preset: preset
-      }
-    });
   }
 
   private loadHourlyWeather(cityName: string): void {
@@ -84,7 +91,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
         return this.weatherService.getHourly(city.lat, city.lon)
       }),
       map((res) => {
-        console.log(res)
+        // console.log(res)
       })
     ).subscribe()
   }
@@ -100,7 +107,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
         return this.weatherService.getDaily(city.lat, city.lon)
       }),
       map((res) => {
-        console.log(res)
+        // console.log(res)
       })
     ).subscribe()
   }

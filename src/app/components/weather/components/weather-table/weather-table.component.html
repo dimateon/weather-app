@@ -4,191 +4,26 @@
           <td class="weather-table__cell">
             <div class="weather-table__cell-text">City Name</div>
           </td>
-
-
-
+         
+          <td *ngFor="let item of mockHeaders" class="weather-table__cell">
+            <div class="weather-table__cell-text">
+               {{ item }}
+            </div>
+          </td>
           
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">03:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">06:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">09:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">12:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">18:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">21:00</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">24:00</div>
-             </div>
-          </td>
        </tr>
-       <tr class="notion-table-row">
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">New York</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-       </tr>
-       <tr class="notion-table-row">
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">London</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-       </tr>
-       <tr class="notion-table-row">
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">Limassol</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-          <td style="color: inherit; fill: inherit; border: 1px solid rgb(233, 233, 231); position: relative; vertical-align: top; text-align: start; min-width: 120px; max-width: 240px; min-height: 32px;">
-             <div class="notion-table-cell">
-                <div class="notion-table-cell-text" spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 7px 9px; background-color: transparent; font-size: 14px; line-height: 20px;" contenteditable="false">15°</div>
-             </div>
-          </td>
-       </tr>
+
+       <tr class="weather-table-row">
+         <td class="weather-table__cell">
+           <div class="weather-table__cell-text">Moscow</div>
+         </td>
+        
+         <td class="weather-table__cell">
+           <div class="weather-table__cell-text">15</div>
+         </td>
+
+         
+      </tr>
+       
     </tbody>
  </table>

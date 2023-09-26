@@ -45,7 +45,4 @@ export interface TempDayItem {
     night: number;
 }
 
-export enum WeatherTablePresets {
-    HOURLY = 'hourly',
-    DAILY = 'daily',
-}
+

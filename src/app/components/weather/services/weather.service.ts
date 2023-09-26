@@ -5,6 +5,7 @@ import { environment } from "src/environments/environment";
 import { Observable, catchError, map } from 'rxjs';
 import { WeatherCity, WeatherCityDTO, WeatherDailyDTO, WeatherHourlyDTO } from "../../../interfaces/weather";
 import { ErrorService } from "../../../services/error.service";
+import { WeatherTableSizes } from "src/app/constants/weather";
 
 @Injectable()
 export class WeatherService {
@@ -16,10 +17,6 @@ export class WeatherService {
         const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${this.API_KEY}`;
         return this.http.get<WeatherCityDTO[]>(url).pipe(
             catchError(() => this.errorService.showError()),
-            map((data) => {
-                console.log(data);
-                return data;
-            }),
             map((city) => {
                 if (!city.length) {
                     return null;
@@ -52,9 +49,19 @@ export class WeatherService {
     }
 
     private mapHourly(data: WeatherHourlyDTO): any {
-        const filtered = data.hourly.slice(0, 24)
-            .filter((item) => new Date(item.dt * 1000).getHours() !== 0 && new Date(item.dt * 1000).getHours() % 3 === 0)
-            .sort((a, b) => a.dt - b.dt);
+        // const filtered = data.hourly;
+        // console.log(filtered)
+        // const filtered = data.hourly.slice(0, 24)
+        //     .filter((item, index) => new Date(item.dt * 1000).getHours() !== 0 && new Date(item.dt * 1000).getHours() % 3 === 0)
+        //     .sort((a, b) => a.dt - b.dt);
+        // for (let i = 0; )
+        // const q = filtered.filter((item, index) => index % 3 ===0);
+        // // console.log(q);
+        // q.map((item) => {
+        //     console.log(new Date(item.dt * 1000))
+        // })
+
+        const filtered = data.hourly.filter((item, index) => index % 3 ===0).map((item) => item.temp).slice(0, WeatherTableSizes.HOURLY);
         // console.log(filtered);
         return filtered;
     }

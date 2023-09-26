@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {FormsModule} from "@angular/forms";
-import {WeatherTablePresets} from "../../../../interfaces/weather";
+import { WeatherTablePresets } from "src/app/constants/weather";
 import {CommonModule} from "@angular/common";
 
 @Component({

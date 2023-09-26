@@ -1,5 +1,5 @@
 <weather-search (addCity)="onAddCity($event)"></weather-search>
 
-<weather-preset-selector [presets]="presets" (selected)="onPresetSelected($event)"></weather-preset-selector>
+<weather-preset-selector [presets]="presets" (selected)="onPresetSelected($event)" [selectedPreset]="selectedPreset"></weather-preset-selector>
 
 <weather-table></weather-table>
