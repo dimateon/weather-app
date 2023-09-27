@@ -1,32 +1,31 @@
 .preset-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 40px 0;
 
-  &__radio {
+    &__radio {
+        input {
+            display: none;
+        }
 
-    input {
-      display: none;
+        label {
+            padding: 7px 9px;
+            font-size: 14px;
+            line-height: 20px;
+            background: transparent;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            color: #000;
+            text-transform: capitalize;
+            transition: 0.3s ease;
+        }
+
+        input:checked + label {
+            border-color: #000;
+            background: buttonface;
+            transition: 0.3s ease;
+        }
     }
-
-    label {
-      padding: 7px 9px;
-      font-size: 14px;
-      line-height: 20px;
-      background: transparent;
-      border-radius: 2px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      color: #000;
-      text-transform: capitalize;
-      transition: .3s ease;
-    }
-
-    input:checked + label {
-      border-color: #000;
-      background: buttonface;
-      transition: .3s ease;
-    }
-  }
 }

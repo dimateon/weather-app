@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
-import {Observable, catchError, map} from 'rxjs';
-import { WeatherCity, WeatherCityDTO, WeatherDailyDTO, WeatherHourlyDTO } from "../../../interfaces/weather";
-import { ErrorService } from "../../../services/error.service";
-import { WeatherTableSizes } from "src/app/constants/weather";
+import { Observable, catchError, map } from 'rxjs';
+import { WeatherCity, WeatherCityDTO, WeatherDailyDTO, WeatherHourlyDTO } from '../../../interfaces/weather';
+import { ErrorService } from '../../../services/error.service';
+import { WeatherTableSizes } from 'src/app/constants/weather';
 
 @Injectable()
 export class WeatherService {
@@ -24,10 +24,10 @@ export class WeatherService {
                 return {
                     name: city[0].name,
                     lat: city[0].lat,
-                    lon: city[0].lon
-                }
-            }),
-        )
+                    lon: city[0].lon,
+                };
+            })
+        );
     }
 
     public getHourly(lat: number, lon: number): Observable<number[]> {
@@ -36,7 +36,7 @@ export class WeatherService {
         return this.http.get<WeatherHourlyDTO>(url).pipe(
             catchError(() => this.errorService.showError()),
             map((data) => this.mapHourly(data))
-        )
+        );
     }
 
     public getDaily(lat: number, lon: number): Observable<number[]> {
@@ -45,11 +45,14 @@ export class WeatherService {
         return this.http.get<WeatherDailyDTO>(url).pipe(
             catchError(() => this.errorService.showError()),
             map((data) => this.mapDaily(data))
-        )
+        );
     }
 
     private mapHourly(data: WeatherHourlyDTO): number[] {
-        return data.hourly.filter((item, index) => index % 3 ===0).map((item) => item.temp).slice(0, WeatherTableSizes.HOURLY);
+        return data.hourly
+            .filter((item, index) => index % 3 === 0)
+            .map((item) => item.temp)
+            .slice(0, WeatherTableSizes.HOURLY);
     }
 
     private mapDaily(data: WeatherDailyDTO): number[] {

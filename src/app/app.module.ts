@@ -8,23 +8,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 
-import {WeatherComponent} from "./components/weather/weather.component";
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    CommonModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MatSnackBarModule,
-    FormsModule,
-    WeatherComponent
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        CommonModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatSnackBarModule,
+        FormsModule,
+        WeatherComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,33 +1,33 @@
 .weather-search {
-  margin: 40px 0;
+    margin: 40px 0;
 
-  &__label {
-    font-size: 14px;
-    padding: 0 9px;
-    line-height: 16px;
-    margin-bottom: 6px;
-  }
-
-  &__input {
-    border: 1px solid rgb(233, 233, 231);
-    padding: 7px 9px;
-    font-size: 14px;
-    line-height: 20px;
-    width: 360px;
-    transition: border-color .3s ease;
-
-    &:focus {
-      outline: none;
-      box-shadow: none;
-      border-color: lightblue;
-      transition: border-color .3s ease;
+    &__label {
+        font-size: 14px;
+        padding: 0 9px;
+        line-height: 16px;
+        margin-bottom: 6px;
     }
-  }
 
-  &__button {
-    margin-left: 20px;
-    padding: 6px 9px;
-    font-size: 14px;
-    line-height: 20px;
-  }
+    &__input {
+        border: 1px solid rgb(233, 233, 231);
+        padding: 7px 9px;
+        font-size: 14px;
+        line-height: 20px;
+        width: 360px;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: lightblue;
+            transition: border-color 0.3s ease;
+        }
+    }
+
+    &__button {
+        margin-left: 20px;
+        padding: 6px 9px;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }

@@ -1,16 +1,16 @@
-import { WeatherTableDays, WeatherTableSizes } from "../constants/weather";
+import { WeatherTableDays, WeatherTableSizes } from '../constants/weather';
 
 export function getHourlyHeaders(count: number = WeatherTableSizes.HOURLY, step: number = 3): string[] {
     const currentDate = new Date();
     const res: string[] = [addZerosToHours(currentDate.getHours())];
-    while(res.length < count) {
+    while (res.length < count) {
         currentDate.setTime(currentDate.getTime() + step * 60 * 60 * 1000);
         res.push(addZerosToHours(currentDate.getHours()));
     }
     return res;
 }
 
-export function getDailyHeaders(count: number =  WeatherTableSizes.DAILY): string[] {
+export function getDailyHeaders(count: number = WeatherTableSizes.DAILY): string[] {
     const currentDate = new Date();
     const res: string[] = [WeatherTableDays[currentDate.getDay() - 1]];
     while (res.length < count) {

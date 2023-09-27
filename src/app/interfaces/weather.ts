@@ -36,8 +36,8 @@ export interface WeatherHourDTO {
 }
 
 export interface WeatherDayDTO {
-  dt: number;
-  temp: TempDayItem;
+    dt: number;
+    temp: TempDayItem;
 }
 
 export interface TempDayItem {
@@ -48,5 +48,3 @@ export interface TempDayItem {
     morn: number;
     night: number;
 }
-
-
